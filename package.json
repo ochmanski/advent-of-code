@@ -1,0 +1,13 @@
+{
+    "name": "advent-of-code",
+    "private": true,
+    "author": "Kacper Ochmański <ochmanskikacper@gmail.com> (https://ochman.ski)",
+    "license": "CC BY-NC 4.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ochmanski/advent-of-code.git"
+    },
+    "devDependencies": {
+        "lerna": "^3.18.3"
+    }
+}
