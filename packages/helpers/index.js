@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-exports.getTextFile = (filename) =>
+const getTextFileUnsafe = (filename) =>
   new Promise((resolve, reject) => {
     fs.readFile(
       path.resolve(path.dirname(require.main.filename), filename),
@@ -13,3 +13,17 @@ exports.getTextFile = (filename) =>
       }
     );
   });
+
+const getTextFile = async (filename) => {
+  let data = '';
+
+  try {
+    data = await getTextFileUnsafe(filename);
+  } catch (e) {
+    console.log(e);
+  }
+
+  return data;
+};
+
+module.exports = { getTextFileUnsafe, getTextFile };
